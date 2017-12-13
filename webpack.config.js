@@ -18,7 +18,6 @@ glob.sync(compiledFiles)
     modules[BUNDLE_HELPER.path(file.replace('/index.js', ''))] = file
   })
 
-console.log(modules)
 module.exports = {
     entry: modules,
     output: {
@@ -59,7 +58,7 @@ module.exports = {
         {
           test: /\.font\.js$/,
           include: [
-            path.resolve(__dirname, 'modules/apps')
+            path.resolve(__dirname, 'src')
           ],
           use: ExtractTextPlugin.extract({
             fallback: 'style-loader',
