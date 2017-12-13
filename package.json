@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo sorry no tests",
-    "start": "webpack-dev-server --content-base dist/ --hot --inline"
+    "start": "webpack-dev-server --content-base dist/"
   },
   "repository": {
     "type": "git",

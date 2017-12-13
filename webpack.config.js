@@ -36,8 +36,6 @@ module.exports = {
         historyApiFallback: {
             index: 'index.html'
           },
-        hot: true,
-        inline: true
     },
     devtool: 'source-map',
     module: {

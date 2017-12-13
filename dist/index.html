@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
+  <script tyle="text/javascript">
+    var styles = "<link rel='stylesheet' type='text/css' href='"+ window.location.href +"/styles.css'/>"
+    var script = '<script defer src="'+ window.location.href +'/index.js"><\/script>'
+    document.write(styles);
+    document.write(script)
+  </script>
 </head>
 <body>
   <div id="react-spa"></div>
-  <script type="text/javascript">
-    var script = '<script src="'+ window.location.href +'/index.js"><\/script>'
-    document.write(script)
-  </script>
 </body>
 </html>
