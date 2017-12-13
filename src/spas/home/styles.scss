@@ -4,6 +4,10 @@ body {
     font-family: monospace;
 }
 
+.no-select {
+    user-select: none;
+}
+
 svg {
     position: absolute;
     width: 100px;

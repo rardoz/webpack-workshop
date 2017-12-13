@@ -9,17 +9,19 @@ class HomeSPA extends Component {
         this.state = {
             score: 0
         }
+        this.points = 0
     }
 
     onClick(){
-        this.setState({score: this.state.score + 1})
+        this.points += 1
+        this.setState({score: this.points})
     }
 
     render(){
         return (
             <div>
-                <h1>> Hello kitty!</h1>
-                <h2>Score: {this.state.score}</h2>
+                <h1 className="no-select">> Hello kitty!</h1>
+                <h2 className="no-select">Score: {this.state.score}</h2>
                 <GithubKitty onClick={() => this.onClick()}/>
             </div>
         )
