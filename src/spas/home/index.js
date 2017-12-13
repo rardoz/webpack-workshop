@@ -1,5 +1,30 @@
-import React from 'react'
+import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
-console.log('hello worlds!')
 import './styles.scss'
-ReactDOM.render(<h1>Hello Worldsss!</h1>, document.getElementById('react-spa'))
+import GithubKitty from './github.svg'
+
+class HomeSPA extends Component {
+    constructor(){
+        super()
+        this.state = {
+            score: 0
+        }
+    }
+
+    onClick(){
+        this.setState({score: this.state.score + 1})
+    }
+
+    render(){
+        return (
+            <div>
+                <h1>> Hello kitty!</h1>
+                <h2>Score: {this.state.score}</h2>
+                <GithubKitty onClick={() => this.onClick()}/>
+            </div>
+        )
+    }
+}
+
+
+ReactDOM.render(<HomeSPA />, document.getElementById('react-spa'))
