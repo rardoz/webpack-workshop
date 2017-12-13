@@ -104,7 +104,7 @@ module.exports = {
           id: 'svg',
           loaders: [
             // 'react-hot-loader',
-            `react-svg-loader?${JSON.stringify({
+            `babel-loader!react-svg-loader?${JSON.stringify({
               svgo: {
                 // svgo options
                 plugins: [{ removeTitle: false }],
@@ -129,20 +129,10 @@ module.exports = {
       ]
     }
     
-    if (ENV === '"production"') {
+    if (ENV === 'production') {
+
       module.exports.plugins.push(
-        new webpack.optimize.UglifyJsPlugin({
-          compress: {
-            warnings: false,
-          },
-          output: {
-            comments: false,
-          },
-        })
-      )
-    
-      module.exports.plugins.push(
-         new OptimizeCssAssetsPlugin({
+         new OptimizeCSSAssetsPlugin({
            assetNameRegExp: /\.css$/,
            cssProcessorOptions: { discardComments: { removeAll: false } }
          })
