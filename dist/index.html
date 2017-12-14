@@ -7,8 +7,8 @@
     if(window.location.href === 'http://localhost:8080' || window.location.href === 'http://localhost:8080/') window.location = '/home'
     var styles = "<link rel='stylesheet' type='text/css' href='"+ window.location.href +"/styles.css'/>"
     var script = '<script defer src="'+ window.location.href +'/index.js"><\/script>'
-    document.write(styles);
-    document.write(script)
+    document.write(styles.replace('//styles.css', '/styles.css'))
+    document.write(script.replace('//index.js', '/index.js'))
   </script>
 </head>
 <body>

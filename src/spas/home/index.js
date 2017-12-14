@@ -33,6 +33,7 @@ class HomeSPA extends Component {
         }
         return yays
     }
+    
     render(){
         return (
             <div>
