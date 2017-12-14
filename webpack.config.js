@@ -47,6 +47,13 @@ module.exports = {
           loaders: ['happypack/loader?id=js']
         },
         {
+          test: /\.vue$/,
+          include: [
+            path.resolve(__dirname, 'src')
+          ],
+          loaders: ['happypack/loader?id=vue']
+        },
+        {
           test: /\.svg$/,
           exclude: /node_modules/,
           loaders: ['happypack/loader?id=svg']
@@ -77,6 +84,7 @@ module.exports = {
         }]
       },
       resolve: {
+        alias: { vue: 'vue/dist/vue.js'},
         modules: ['src', 'node_modules']
       },
       plugins: [
@@ -90,6 +98,18 @@ module.exports = {
           tempDir: '/tmp/happypack-js',
           // threadPool: new HappyPack.ThreadPool({ size: 1 }),
           id: 'js',
+          loaders: [
+            // 'react-hot-loader',
+            'babel-loader'
+          ]
+        }),
+        new HappyPack({
+          cacheContext: {
+            env: ENV
+          },
+          tempDir: '/tmp/happypack-vue',
+          // threadPool: new HappyPack.ThreadPool({ size: 1 }),
+          id: 'vue',
           loaders: [
             // 'react-hot-loader',
             'babel-loader'
